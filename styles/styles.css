@@ -115,6 +115,7 @@ body {
 
 /* Main content styles */
 .main .section {
+    min-height: 80vh;
     width: 90%;
     margin: auto;
     padding: 5rem 3rem;
