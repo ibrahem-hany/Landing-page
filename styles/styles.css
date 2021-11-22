@@ -1,7 +1,7 @@
 /* Base styles */
 *,
 *::before,
-**::after {
+*::after {
     padding: 0;
     margin: 0;
     box-sizing: inherit;
@@ -20,3 +20,6 @@ body {
     color: #fff;
     font-family: 'Merriweather', serif;
 }
+
+
+
