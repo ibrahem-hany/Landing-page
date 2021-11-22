@@ -11,6 +11,8 @@ const main = document.querySelector(".main");
 
 // Add the stored sections dynamically
 storedSections.forEach(sectionContent => {
+
+    // Create an element for each section
     const sectionElement = `
         <section class="section" id="${sectionContent.id}" data-nav="${sectionContent.dataNav}">
             <h2 class="section__heading">${sectionContent.dataNav}</h2>
@@ -18,5 +20,38 @@ storedSections.forEach(sectionContent => {
         </section>
     `
 
+    // Add the section to the main element
     main.innerHTML += sectionElement;
+});
+
+
+
+
+
+
+
+
+
+// Create the navigation links dynamically
+const sectionElements = document.querySelectorAll(".section");
+const navbarList = document.querySelector(".navbar__list");
+
+Array.from(sectionElements).forEach(sectionElement => {
+
+    // Create a navigation list item for each section
+    const navbarListItem = document.createElement("li");
+    navbarListItem.className = "navbar__list-item";
+
+    // Create a navigation link for each section
+    const navbarLink = document.createElement("a");
+    navbarLink.className = "navbar__link";
+    navbarLink.setAttribute("href", "#");
+    navbarLink.textContent = sectionElement.dataset.nav;
+
+
+    // Append the navigation link to the navigation list item
+    navbarListItem.appendChild(navbarLink);
+
+    // Append the navigation list item to the navigation list
+    navbarList.appendChild(navbarListItem);
 });
