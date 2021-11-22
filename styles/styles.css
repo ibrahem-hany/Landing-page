@@ -1,0 +1,22 @@
+/* Base styles */
+*,
+*::before,
+**::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+
+    color: #fff;
+    font-family: 'Merriweather', serif;
+}
