@@ -57,6 +57,7 @@ Array.from(sectionElements).forEach(sectionElement => {
 
     // Append the navigation list item to the navigation list
     navbarList.appendChild(navbarListItem);
+
 });
 
 
@@ -70,6 +71,7 @@ Array.from(sectionElements).forEach(sectionElement => {
 const observer = new IntersectionObserver(function(entries) {
     // Loop over the sections
     entries.forEach(entry => {
+
         
         // - Reference the navigation link based on the section data attribute
         const navigationLink = document.querySelector(`.navbar__link[data-nav="${entry.target.dataset.nav}"]`);
@@ -97,4 +99,23 @@ const observer = new IntersectionObserver(function(entries) {
 // Observe each section
 Array.from(sectionElements).forEach(sectionElement => {
     observer.observe(sectionElement);
+});
+
+
+
+
+
+
+
+
+
+// Add the scroll to top button functionality
+const scrollToTop = document.querySelector(".scroll-to-top");
+
+scrollToTop.addEventListener("click", e => {
+    window.scrollTo({
+        behavior: "smooth",
+        top: 0,
+        left: 0
+    })
 })

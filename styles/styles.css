@@ -221,3 +221,36 @@ body {
 .footer__text {
     font-size: 2rem;
 }
+
+
+
+/* Scroll to top button styles */
+
+.scroll-to-top-container {
+    position: relative;
+}
+.scroll-to-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 4rem;
+    border: none;
+    border-radius: 50%;
+
+
+    position: absolute;
+    bottom: 5rem;
+    right: 5rem;
+
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+
+    background-image: linear-gradient(to bottom, rgba(0, 0, 255, 0.7), rgba(255, 0, 0, 0.7));
+
+    cursor: pointer;
+
+}
