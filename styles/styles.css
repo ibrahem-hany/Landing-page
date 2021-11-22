@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    min-height: 200vh;
 
     background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
 
@@ -23,3 +23,49 @@ body {
 
 
 
+/* Navigation bar styles */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+
+    position: fixed;
+
+    background-color: #fff;
+
+}
+
+.navbar__list {
+    display: flex;
+
+    list-style-type: none;
+
+}
+
+.navbar__link:link,
+.navbar__link:visited {
+    display: block;
+    padding: 1.5rem 2rem;
+    
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: all 0.3s;
+}
+
+
+.navbar__link:hover,
+.navbar__link:active {
+    background-color: #333;
+
+    color: #fff;
+}
+
+.navbar__link.navbar__link--active {
+    background-color: #333;
+
+    color: #fff;
+}
