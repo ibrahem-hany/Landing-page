@@ -48,6 +48,9 @@ Array.from(sectionElements).forEach(sectionElement => {
     navbarLink.setAttribute("href", "#");
     navbarLink.textContent = sectionElement.dataset.nav;
 
+    // Add the data attribute to reference the element for the intersection observer
+    navbarLink.dataset.nav = sectionElement.dataset.nav;
+
 
     // Append the navigation link to the navigation list item
     navbarListItem.appendChild(navbarLink);
@@ -55,3 +58,43 @@ Array.from(sectionElements).forEach(sectionElement => {
     // Append the navigation list item to the navigation list
     navbarList.appendChild(navbarListItem);
 });
+
+
+
+
+
+
+// Add the scrollspy functionality
+
+// Create an intersection observer instance
+const observer = new IntersectionObserver(function(entries) {
+    // Loop over the sections
+    entries.forEach(entry => {
+        
+        // - Reference the navigation link based on the section data attribute
+        const navigationLink = document.querySelector(`.navbar__link[data-nav="${entry.target.dataset.nav}"]`);
+
+        if (entry.isIntersecting) {
+            // Add the active class to the navigation link
+            navigationLink.classList.add("navbar__link--active");
+
+            // Add the active class to the section
+            entry.target.classList.add("section--active");
+        } else {
+
+            // Remove the active class from the navigation link
+            navigationLink.classList.remove("navbar__link--active");
+
+            // Remove the active class from the section
+            entry.target.classList.remove("section--active");
+        }
+    })
+}, {
+    rootMargin: "-40%"
+});
+
+
+// Observe each section
+Array.from(sectionElements).forEach(sectionElement => {
+    observer.observe(sectionElement);
+})
