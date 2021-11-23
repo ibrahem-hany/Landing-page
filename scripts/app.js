@@ -28,7 +28,8 @@ storedSections.forEach(sectionContent => {
 
 
 
-
+// Reset the scroll
+window.scrollTo(0, 0);
 
 
 
@@ -57,6 +58,24 @@ Array.from(sectionElements).forEach(sectionElement => {
 
     // Append the navigation list item to the navigation list
     navbarList.appendChild(navbarListItem);
+
+
+
+    const sectionPosition = sectionElement.getBoundingClientRect().top;
+
+
+    // Add the scroll to section functionality
+    navbarLink.addEventListener("click", e => {
+        
+        e.preventDefault();
+
+        // Scroll to the desired section
+        window.scrollTo({
+            behavior: "smooth",
+            left: 0,
+            top: sectionPosition
+        });
+    });
 
 });
 
@@ -118,4 +137,12 @@ scrollToTop.addEventListener("click", e => {
         top: 0,
         left: 0
     })
-})
+});
+
+
+
+
+
+
+
+
